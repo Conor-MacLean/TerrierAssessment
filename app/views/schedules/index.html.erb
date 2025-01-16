@@ -1,0 +1,25 @@
+<h1>Schedule for Today</h1>
+
+<div class="schedule-grid">
+  <div class="time-column">
+    <% (8..18).each do |hour| %> <!-- Display hours from 8 AM to 6 PM -->
+      <div class="time-slot"><%= "#{hour}:00" %></div>
+    <% end %>
+  </div>
+
+  <% @technicians.each do |technician| %>
+    <div class="technician-column">
+      <div class="technician-header"><%= technician.name %></div>
+      
+      <% @work_orders.where(technician: technician).order(:time).each do |work_order| %>
+        <!-- Calculate the position of the work order -->
+        <div class="work-order" style="top: <%= (work_order.time.hour - 8) * 60 + work_order.time.min %>px; height: <%= work_order.duration %>px;">
+          <strong><%= work_order.location.name %></strong>
+          <p><%= work_order.location.city %></p>
+          <p>Start: <%= work_order.time.strftime('%H:%M') %></p>
+          <p>Price: $<%= work_order.price %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

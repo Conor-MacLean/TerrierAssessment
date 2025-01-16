@@ -27,7 +27,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_16_175251) do
   create_table "work_orders", force: :cascade do |t|
     t.integer "technician_id", null: false
     t.integer "location_id", null: false
-    t.datetime "start_time"
+    t.datetime "time"
     t.integer "duration"
     t.decimal "price"
     t.datetime "created_at", null: false

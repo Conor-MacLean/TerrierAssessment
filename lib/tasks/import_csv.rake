@@ -44,7 +44,7 @@ namespace :import do
         WorkOrder.find_or_create_by(
           technician: technician,
           location: location,
-          start_time: row['start_time'],
+          time: row['time'],
           duration: row['duration'].to_i,
           price: row['price'].to_f
         )

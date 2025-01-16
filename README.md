@@ -8,8 +8,7 @@ This Ruby on Rails application is a work order scheduling system that manages te
 
 ### Ruby and Rails Versions
 - **Ruby version**: 3.4.1
-- **Rails version**: 7.x.x (or specify your exact version)
-
+- **Rails version**: 8.0.1
 ### System Dependencies
 - Ruby and Rails installed on your system.
 - A database system (PostgreSQL, SQLite, or MySQL based on your setup).
@@ -21,5 +20,4 @@ This Ruby on Rails application is a work order scheduling system that manages te
 
 ### 1. Clone the Repository
 ### ```bash
-### git clone https://github.com/Conor-MacLean/TerrierTechnicalAssessment.git
-### cd terrierAssessment
+### git clone https://github.com/Conor-MacLean/TerrierAssessment
