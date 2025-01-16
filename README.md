@@ -20,6 +20,6 @@ This Ruby on Rails application is a work order scheduling system that manages te
 ## Setup Instructions
 
 ### 1. Clone the Repository
-```bash
-git clone https://github.com/Conor-MacLean/TerrierTechnicalAssessment.git
-cd <repository_name>
+### ```bash
+### git clone https://github.com/Conor-MacLean/TerrierTechnicalAssessment.git
+### cd terrierAssessment
