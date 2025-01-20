@@ -1,28 +1,34 @@
 <div class="schedule-grid">
+  <!-- Time labels column -->
   <div class="time-column">
-    <% (8..18).each do |hour| %> <!-- Display hours from 8 AM to 6 PM -->
+    <% (5..18).each do |hour| %> <!-- Display hours from 5 AM to 6 PM -->
       <div class="time-slot"><%= "#{hour}:00" %></div>
     <% end %>
   </div>
-  <%= javascript_include_tag "schedule_grid", "data-turbo-track": "reload" %>
+  
 
+  <!-- Technicians' schedule columns -->
   <% @technicians.each do |technician| %>
     <div class="technician-column">
-
       <div class="technician-header"><%= technician.name %></div>
-      <% (8..18).each do |hour| %>
+      
+      <!-- Open spaces for new work orders -->
+      <% (5..18).each do |hour| %> <!-- Adjusted to start at 5 AM -->
         <div 
-          class="open-space" 
+          class="time-slot open-space" 
           data-technician-id="<%= technician.id %>" 
-          data-hour="<%= hour %>"
-        ></div>
+          data-hour="<%= hour %>">
+        </div>
       <% end %>
 
+      <!-- Work orders -->
       <% technician.work_orders.each do |work_order| %>
         <div 
           class="work-order"
-          style="top: <%= (work_order.time.hour - 8) * 60 + work_order.time.min %>px; 
-                 height: <%= work_order.duration %>px;"
+          style="
+            top: <%= (work_order.time.hour - 5) * 60 + work_order.time.min %>px; 
+            height: <%= work_order.duration %>px;
+          "
         >
           <strong><%= work_order.location.name %></strong>
           <p><%= work_order.location.city %></p>
@@ -33,4 +39,4 @@
     </div>
   <% end %>
 </div>
-
+<%= javascript_include_tag "schedule_grid", "data-turbo-track": "reload" %>

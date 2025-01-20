@@ -1,47 +1,95 @@
-body {
-  font-family: Arial, sans-serif;
-}
-
 .schedule-grid {
   display: grid;
-  grid-template-columns: 100px repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-  padding: 20px;
+  grid-template-columns: 100px repeat(auto-fit, minmax(150px, 1fr)); /* Time column and technician columns */
+  position: relative;
+  grid-gap: 1px;
 }
 
 .time-column {
-  border-right: 1px solid #ccc;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 0;
 }
 
 .time-slot {
-  height: 60px;
-  line-height: 60px;
-  text-align: right;
-  padding-right: 10px;
-  border-bottom: 1px dashed #ccc;
+  height: 60px; /* 1 hour = 60px */
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .technician-column {
+  display: grid;
+  grid-template-rows: auto repeat(14, 60px);
   position: relative;
-  border-left: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ddd;
+  padding: 0;
 }
 
 .technician-header {
   text-align: center;
   font-weight: bold;
-  border-bottom: 1px solid #000;
-  background-color: #f4f4f4;
-  padding: 5px;
+  background-color: #eee;
+  height: 60px;
+  z-index: 1;
+  flex-shrink: 0;
 }
 
 .work-order {
   position: absolute;
-  left: 10px;
-  width: calc(100% - 20px);
-  background-color: #e0f7fa;
-  border: 1px solid #00acc1;
+  left: 10%;
+  width: 80%;
+  background-color: #007bff;
+  color: #000000;
+  padding: 10px;
   border-radius: 4px;
-  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-height: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.work-order:hover {
+  z-index: 10;
+  overflow: visible;
+  white-space: normal;
+  height: auto;
+  background-color: #0056b3;
+  max-height: none;
+  padding: 15px;
+}
+
+
+
+.work-order p {
+  margin: 0;
+  font-size: 12px;
+  text-overflow: ellipsis;
+}
+
+.work-order strong {
+  font-size: 14px;
+}
+
+.open-space {
+  height: 60px; /* 1 hour = 60px */
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.open-space:hover {
+  background-color: #f1f1f1;
+}
+
+.time-slot, .open-space {
+  height: 60px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
 }
