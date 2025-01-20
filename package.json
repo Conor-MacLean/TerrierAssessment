@@ -1,0 +1,16 @@
+{
+  "name": "terrierassessment",
+  "version": "1.0.0",
+  "description": "This Ruby on Rails application is a work order scheduling system that manages technicians, locations, and work orders. It displays a scheduling grid for a specific day and allows users to interact with the schedule.",
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

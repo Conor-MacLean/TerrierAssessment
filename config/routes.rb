@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   # config/routes.rb
   resources :schedules, only: [:index]
 
+  resources :technicians do
+    resources :work_orders, only: [:index]
+  end
 end

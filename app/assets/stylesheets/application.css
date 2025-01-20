@@ -8,3 +8,31 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ .schedule-grid {
+    display: flex;
+  }
+  
+  .time-column {
+    width: 100px;
+  }
+  
+  .technician-column {
+    flex: 1;
+    position: relative;
+  }
+  
+  .open-space {
+    height: 60px;
+    border: 1px dashed #ccc;
+    cursor: pointer;
+  }
+  
+  .work-order {
+    position: absolute;
+    background-color: #add8e6;
+    border: 1px solid #000;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  
