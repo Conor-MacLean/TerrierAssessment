@@ -34,7 +34,7 @@ rails import:all
 bin/rails server
 
 ### 5. Navigate to webpage
-http://localhost:3000/schedules
+http://localhost:3000
 
 ## Approach and Problems Faced
 The main approach I used was largely following the ruby on rails getting started guide. I had never used this pipeline before so one of the largest challenges I faced was getting aquainted with said pipeline. Once I had the basics of ruby on rails understood I was then able to fall back on the development style I have used throughout school and my previous internship in order to create a relatively clean looking front end and an acceptable back end for the task presented to me. I am aware that there are some flaws, such as minimal endpoints and highly specific edge cases. I believe that with more practice with ruby on rails I would be able to complete this to a higher standard.
