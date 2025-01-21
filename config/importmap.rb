@@ -2,4 +2,3 @@
 
 pin "application"
 pin "schedule_grid"
-

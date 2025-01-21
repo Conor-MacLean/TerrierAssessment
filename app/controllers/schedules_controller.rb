@@ -11,5 +11,4 @@ class SchedulesController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     render json: { error: "Technician not found" }, status: :not_found
   end
-
 end

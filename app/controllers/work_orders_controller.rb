@@ -4,7 +4,6 @@ class WorkOrdersController < ApplicationController
       work_orders = technician.work_orders
       render json: work_orders
     rescue ActiveRecord::RecordNotFound
-      render json: { error: 'Technician not found' }, status: :not_found
+      render json: { error: "Technician not found" }, status: :not_found
     end
-  end
-  
+end

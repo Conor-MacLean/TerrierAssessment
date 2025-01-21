@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   # config/routes.rb
-  resources :schedules, only: [:index]
+  resources :schedules, only: [ :index ]
 
   resources :technicians do
-    resources :work_orders, only: [:index]
+    resources :work_orders, only: [ :index ]
   end
 end
