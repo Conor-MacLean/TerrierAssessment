@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  root 'schedules#index'
+  root "schedules#index"
   # config/routes.rb
   resources :schedules, only: [ :index ]
 
