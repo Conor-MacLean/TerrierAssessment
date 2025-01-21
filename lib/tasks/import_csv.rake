@@ -17,7 +17,7 @@ namespace :import do
     end
     puts "Technicians imported successfully."
   end
-  
+
   desc "Import locations from CSV"
   task locations: :environment do
     require "csv"
@@ -25,14 +25,14 @@ namespace :import do
 
     CSV.foreach(file_path, headers: true) do |row|
       Location.find_or_create_by(
-        id: row["id"], 
+        id: row["id"],
         name: row["name"],
         city: row["city"]
       )
     end
     puts "Locations imported successfully."
   end
-  
+
   desc "Import work orders from CSV"
   task work_orders: :environment do
     require "csv"
